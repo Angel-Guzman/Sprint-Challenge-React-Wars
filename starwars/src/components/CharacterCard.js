@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const CharacterCardDiv = styled.p`
     width: 100px;
-    height: 360px;
+    height: 380px;
     color: black;
 `;
 

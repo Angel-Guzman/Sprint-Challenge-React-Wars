@@ -56,7 +56,7 @@ function Character ({luke, setLuke, people, setPeople}) {
             {/* <p>Single Character: {luke}</p> */} 
             {
             people.map(person => {
-                return <CharacterCard person={person} />
+                return <CharacterCard key={person.url} person={person} />
             })
             }
         </CharacterDiv>
