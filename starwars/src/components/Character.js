@@ -4,10 +4,22 @@ import styled from 'styled-components';
 import CharacterCard from './CharacterCard'
 // Write your Character component here
 
+
 const CharacterDiv = styled.div`
+    display: flex;
+    margin: 10px;
     width: 100px;
-    height: 50px;
+    height: 300px;
     color: black;
+    p {
+    display: flex;
+    flex-direction: column;    
+    text-align: center;
+    margin: 10px;
+    background-color: lightgray;
+    padding: 3px;
+    border-radius: 8px;
+}
 `;
 
 function Character ({luke, setLuke, people, setPeople}) {
@@ -39,14 +51,15 @@ function Character ({luke, setLuke, people, setPeople}) {
     }
 
     return (
-    <CharacterDiv>
-        <p>{luke}</p>
-        {
-        people.map(person => {
-            return <CharacterCard person={person} />
-        })
-        }
-    </CharacterDiv>
+        <CharacterDiv>
+            {/* Commented out since Luke is in mapped array */}
+            {/* <p>Single Character: {luke}</p> */} 
+            {
+            people.map(person => {
+                return <CharacterCard person={person} />
+            })
+            }
+        </CharacterDiv>
     )
 }
 
