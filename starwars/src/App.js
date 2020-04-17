@@ -12,17 +12,17 @@ const App = () => {
 
   const [search, setSearch] = useState('')
 
-  // const getPeople = () => {
-  //   const term = search.trim()
-  //   return people.filter(person => {
-  //     if (!term) {
-  //       return person
-  //     }
-  //     if (person.toLowerCase().includes(term.toLowerCase())) {
-  //       return person
-  //     }
-  //   })
-  // }
+  const getPeople = () => {
+    const term = search.trim()
+    return people.filter(person => {
+      if (!term) {
+        return person
+      }
+      if (person.name.toLowerCase().includes(term.toLowerCase())) {
+        return person
+      }
+    })
+  }
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
   // side effect in a component, you want to think about which state and/or props it should
@@ -31,7 +31,7 @@ const App = () => {
   return (
     <div className="App">
       <Search setSearch={setSearch} />
-      <Character luke={luke} setLuke={setLuke} people={people}  setPeople={setPeople} />
+      <Character luke={luke} setLuke={setLuke} people={getPeople()}  setPeople={setPeople} />
     </div>
   );
 }
